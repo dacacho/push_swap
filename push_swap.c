@@ -6,7 +6,7 @@
 /*   By: danierod <danierod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 16:26:20 by danierod          #+#    #+#             */
-/*   Updated: 2023/03/22 14:51:20 by danierod         ###   ########.fr       */
+/*   Updated: 2023/03/22 16:33:07 by danierod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ int	main(int ac, char **av)
 	static t_c	c;
 
 	if (ac < 2)
-		error_check(NULL, NULL);
+		return (0);
 	list_gen(&a, ac, av);
 	dub_check(a);
 	idx(a);
