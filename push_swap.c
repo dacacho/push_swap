@@ -128,7 +128,5 @@ int	main(int ac, char **av)
 		else if (list_len(&a) > 5)
 			big_sort(&a, &b, ac, av);
 	}
-	if (!not_sorted(a, b))
-		printf("sorted\n");
 	return (list_del(a, b));
 }
