@@ -6,7 +6,7 @@
 #    By: danierod <danierod@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/26 16:26:20 by danierod          #+#    #+#              #
-#    Updated: 2023/01/04 16:26:19 by danierod         ###   ########.fr        #
+#    Updated: 2023/03/22 14:20:04 by danierod         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CC = cc
 
 RM = rm -rf
 
-SOURCES = $(wildcard ./*.c)
+SOURCES = ./utils.c ./s_oper.c ./push_swap.c ./p_oper.c ./algorithm.c ./rr_oper.c ./r_oper.c
 
 OBJECTS = $(SOURCES:.c=.o)
 
@@ -34,12 +34,12 @@ $(NAME): $(OBJECTS)
 	-@$(CC) $(OBJECTS) -o $(NAME)
 	
 clean:
-	@$(RM) $(OBJECTS)
+	$(RM) $(OBJECTS)
+	clear
 
 fclean:	clean
 	@$(RM) $(NAME)
-	clear
-
+	
 re: fclean all
 
 .PHONY: all clean fclean re

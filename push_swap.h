@@ -6,7 +6,7 @@
 /*   By: danierod <danierod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 16:26:20 by danierod          #+#    #+#             */
-/*   Updated: 2023/03/21 17:23:24 by danierod         ###   ########.fr       */
+/*   Updated: 2023/03/22 14:13:54 by danierod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,26 +32,26 @@ typedef struct s_count
 	int				c;
 	int				n;
 	int				len;
-	long int		nb;
+	long long		nb;
 	char			*s;
 }	t_c;
 
 ///////////////////////////////////////////////////////////////////
 
+int		list_del(t_s *a, t_s *b);
 int		node_pos(t_s *stack, int idx);
 int		bin_len(t_s *stack);
 int		msg(char *str);
-void	error_check(void);
+int		error_check(t_s *a, t_s *b);
 int		list_len(t_s **stack);
 void	idx(t_s *stack);
 int		dub_check(t_s *stack);
 int		not_sorted(t_s *stack_a, t_s *stack_b);
-int		ft_atoi(char *str, t_c c);
+int		ft_atoi(t_c *c, t_s *a);
 
 ///////////////////////////////////////////////////////////////////
 
 int		radix_msd(t_s **stack_a, t_s **stack_b, int f);
-int		radix_lsd(t_s **stack_a, t_s **stack_b, int f);
 int		medium_algorithm_init(t_s **stack_a, t_s **stack_b, t_c c);
 int		medium_algorithm_finish(t_s **stack_a, t_s **stack_b, int f);
 int		small_algorithm(t_s **stack_a, t_s **stack_b, int f);

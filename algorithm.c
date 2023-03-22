@@ -6,11 +6,31 @@
 /*   By: danierod <danierod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 16:26:20 by danierod          #+#    #+#             */
-/*   Updated: 2023/03/21 17:20:11 by danierod         ###   ########.fr       */
+/*   Updated: 2023/03/22 14:16:33 by danierod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	idx(t_s *stack)
+{
+	t_s	*t1;
+	t_s	*t2;
+
+	t1 = stack;
+	while (t1)
+	{
+		t1->idx = 0;
+		t2 = stack;
+		while (t2)
+		{
+			if (t1->val > t2->val)
+				t1->idx++;
+			t2 = t2->next;
+		}
+		t1 = t1->next;
+	}
+}
 
 int	small_algorithm(t_s **stack_a, t_s **stack_b, int f)
 {
@@ -93,31 +113,6 @@ int	radix_msd(t_s **stack_a, t_s **stack_b, int f)
 		while (*stack_b)
 			c.c += pa(stack_a, stack_b, f);
 		c.i++;
-	}
-	return (c.c);
-}
-
-int	radix_lsd(t_s **stack_a, t_s **stack_b, int f)
-{
-	t_c	c;
-
-	c.len = list_len(stack_a);
-	c.i = bin_len(*stack_a);
-	c.c = 0;
-	while (c.i >= 0 && not_sorted(*stack_a, *stack_b))
-	{
-		c.n = 0;
-		while (c.n < c.len && not_sorted(*stack_a, *stack_b))
-		{
-			if ((*stack_a)->idx >> c.i & 1)
-				c.c += ra(stack_a, f);
-			else
-				c.c += pb(stack_a, stack_b, f);
-			c.n++;
-		}
-		while (*stack_b)
-			c.c += pa(stack_a, stack_b, f);
-		c.i--;
 	}
 	return (c.c);
 }
