@@ -38,8 +38,8 @@ clean:
 
 fclean:	clean
 	@$(RM) $(NAME)
+	clear
 
 re: fclean all
-	clear
 
 .PHONY: all clean fclean re
